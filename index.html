@@ -111,7 +111,7 @@
               <div class="member-info">
                 <h4>Ketua Kelompok (Developer)</h4>
                 <span class="pt-3">Biodata Lengkap:</span>
-                <p style="margin-bottom: 2px;">Nama Lengkap : Alfin Daud</p>
+                <p style="margin-bottom: 2px;">Nama Lengkap : Alfin Habsa Balubun</p>
                 <p style="margin-bottom: 2px;">Nim : 220101002</p>
                 <p style="margin-bottom: 2px;">TTL : Bandung, 13 Januari 2000</p>
                 <p style="margin-bottom: 2px;">Hobi : Badminton 🏸</p>
@@ -512,7 +512,7 @@
           
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
             <h3>Analisis Sistem</h3>
-            <h4>Analisis Sistem Bejalan</h4>
+            <h4>Analisis Sistem Berjalan</h4>
             <p>Sistem perpustakaan yang berjalan saat ini masih menggunakan pencatatan manual <br> dengan buku besar untuk:</p>
             <ul>
               <li>Pendaftaran anggota perpustakaan</li>
@@ -741,96 +741,91 @@
     <!-- {{-- Struktur Database --}} -->
     <section id="database" class="gallery section light-background mt-5">
       <div class="container section-title" data-aos="fade-up">
-        <p><span>Implementasi</span> <span class="description-title">Database</span></p>
+          <p><span>Implementasi</span> <span class="description-title">Database</span></p>
       </div><!-- End Section Title -->
       <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100"> 
-            <h3>Struktur Tabel</h3>
-            <ol type="A">
-              <li>Tabel Members
-                <ul type="none">
-                  <li>CREATE TABLE members (
-                    <ul type="none">
-                      <li>member_id INT PRIMARY KEY AUTO_INCREMENT,</li>
-                      <li>name VARCHAR(100) NOT NULL,</li>
-                      <li>email VARCHAR(100) UNIQUE NOT NULL,</li>
-                      <li>password VARCHAR(255) NOT NULL,</li>
-                      <li>phone VARCHAR(15),</li>
-                      <li>status ENUM('active', 'inactive') DEFAULT 'active',</li>
-                      <li>created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP</li>
-                      
-                    </ul>
-                    <li>);</li> <br>
-                  </li>
-                </ul>
-              </li>
-                <li>Tabel Books
-                  <ul type="none">
-                    <li>CREATE TABLE books (
-                      <ul type="none">
-                        <li>book_id INT PRIMARY KEY AUTO_INCREMENT,</li>
-                        <li>title VARCHAR(200) NOT NULL,</li>
-                        <li>author VARCHAR(100) NOT NULL,</li>
-                        <li>isbn VARCHAR(13) UNIQUE,</li>
-                        <li>category VARCHAR(50),</li>
-                        <li>stock INT DEFAULT 0,</li>
-                        <li>created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP</li>
-                        
-                      </ul>
-                      <li>);</li> <br>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-              </li>
-              <li>Tabel Loans
-                <ul type="none">
-                  <li>CREATE TABLE loans (
-                    <ul type="none">
-                      <li>loan_id INT PRIMARY KEY AUTO_INCREMENT,</li>
-                      <li>member_id INT,</li>
-                      <li>book_id INT,</li>
-                      <li>borrow_date DATE NOT NULL,</li>
-                      <li>due_date DATE NOT NULL,</li>
-                      <li>return_date DATE,</li>
-                      <li>status ENUM('borrowed', 'returned', 'overdue') DEFAULT 'borrowed',</li>
-                      <li>FOREIGN KEY (member_id) REFERENCES members(member_id),</li>
-                      <li>FOREIGN KEY (book_id) REFERENCES books(book_id)</li>
-                    </ul>
-                    <li>);</li> <br>
-                  </li>
-                </ul>
-              </li>
-              <li>
-              </li>
-            </ol>
+          <div class="row gy-4">
+              <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100"> 
+                  <h3>Struktur Tabel</h3>
+                  <ol type="A">
+                      <li>Tabel Members
+                          <ul style="list-style-type:none;">
+                              <li>CREATE TABLE members (
+                                  <ul style="list-style-type:none;">
+                                      <li>member_id INT PRIMARY KEY AUTO_INCREMENT,</li>
+                                      <li>name VARCHAR(100) NOT NULL,</li>
+                                      <li>email VARCHAR(100) UNIQUE NOT NULL,</li>
+                                      <li>password VARCHAR(255) NOT NULL,</li>
+                                      <li>phone VARCHAR(15),</li>
+                                      <li>status ENUM('active', 'inactive') DEFAULT 'active',</li>
+                                      <li>created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP</li>
+                                  </ul>
+                              <li>);</li><br>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>Tabel Books
+                          <ul style="list-style-type:none;">
+                              <li>CREATE TABLE books (
+                                  <ul style="list-style-type:none;">
+                                      <li>book_id INT PRIMARY KEY AUTO_INCREMENT,</li>
+                                      <li>title VARCHAR(200) NOT NULL,</li>
+                                      <li>author VARCHAR(100) NOT NULL,</li>
+                                      <li>isbn VARCHAR(13) UNIQUE,</li>
+                                      <li>category VARCHAR(50),</li>
+                                      <li>stock INT DEFAULT 0,</li>
+                                      <li>created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP</li>
+                                  </ul>
+                              <li>);</li><br>
+                              </li>
+                          </ul>
+                      </li>
+                      <li>Tabel Loans
+                          <ul style="list-style-type:none;">
+                              <li>CREATE TABLE loans (
+                                  <ul style="list-style-type:none;">
+                                      <li>loan_id INT PRIMARY KEY AUTO_INCREMENT,</li>
+                                      <li>member_id INT,</li>
+                                      <li>book_id INT,</li>
+                                      <li>borrow_date DATE NOT NULL,</li>
+                                      <li>due_date DATE NOT NULL,</li>
+                                      <li>return_date DATE,</li>
+                                      <li>status ENUM('borrowed', 'returned', 'overdue') DEFAULT 'borrowed',</li>
+                                      <li>FOREIGN KEY (member_id) REFERENCES members(member_id),</li>
+                                      <li>FOREIGN KEY (book_id) REFERENCES books(book_id)</li>
+                                  </ul>
+                              <li>);</li><br>
+                              </li>
+                          </ul>
+                      </li>
+                  </ol>
+              </div>
+              <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250"> 
+                  <h3>Spesifikasi Hardware dan Software</h3>
+                  <ol type="A">
+                      <li>Spesifikasi Hardware
+                          <ul>
+                              <li>Processor: Intel Core i5 </li>
+                              <li>RAM: Minimal 8GB</li>
+                              <li>Storage: 256GB SSD</li>
+                              <li>Network: Gigabit Ethernet</li>
+                          </ul>
+                      </li>
+                      <li>Spesifikasi Software
+                          <ul>
+                              <li>Sistem Operasi: Windows 10/11 atau Linux</li>
+                              <li>Web Server: Apache 2.4</li>
+                              <li>Database: MySQL 8.0</li>
+                              <li>PHP Version: 8.2 atau lebih tinggi</li>
+                              <li>Browser: Chrome, Firefox, Safari versi terbaru</li>
+                          </ul>
+                      </li>
+                  </ol>
+              </div>
           </div>
-          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250"> 
-            <h3>Spesifikasi Hardware dan Software</h3>
-            <ol type="A">
-              <li>Spesifikasi Hardware
-                <ul>
-                  <li>Processor: Intel Core i5 </li>
-                  <li>RAM: Minimal 8GB</li>
-                  <li>Storage: 256GB SSD</li>
-                  <li>Network: Gigabit Ethernet</li>
-                </ul>
-              </li>
-              <li>Spesifikasi Software
-                <ul>
-                  <li>Sistem Operasi: Windows 10/11 atau Linux</li>
-                  <li>Web Server: Apache 2.4</li>
-                  <li>Database: MySQL 8.0</li>
-                  <li>PHP Version: 8.2 atau lebih tinggi</li>
-                  <li>Browser: Chrome, Firefox, Safari versi terbaru</li>
-                </ul>
-              </li>
-            </ol>
-          </div>
-        </div>
       </div>
-    </section>
+  </section>
+  
 
     <section id="bab4" class="about section">
 
@@ -845,7 +840,7 @@
         <div class="row gy-4">
           <div class="col-lg-6 mb-3" data-aos="fade-up" data-aos-delay="100">
             <h3>Kesimpulan</h3>
-            <p>Pengembangan Sistem Informasi Manajemen Perpustakaan Digital berbasis web merupakan solusi yang sangat dibutuhkan untuk mengatasi permasalahan yang dihadapi oleh perpustakaan XYZ University. Sistem manual yang selama ini digunakan memiliki banyak kekurangan, seperti tidak efisien, sulit diakses, dan rentan terhadap kehilangan data. Dengan sistem digital ini, berbagai proses operasional perpustakaan, seperti pendaftaran anggota, pencatatan peminjaman dan pengembalian buku, serta pembuatan laporan, dapat diotomatisasi dan dilakukan dengan lebih efisien.</p>
+            <p>Pengembangan Sistem Informasi Manajemen Perpustakaan Digital berbasis web merupakan solusi yang sangat dibutuhkan untuk mengatasi permasalahan yang dihadapi oleh perpustakaan Sipus University. Sistem manual yang selama ini digunakan memiliki banyak kekurangan, seperti tidak efisien, sulit diakses, dan rentan terhadap kehilangan data. Dengan sistem digital ini, berbagai proses operasional perpustakaan, seperti pendaftaran anggota, pencatatan peminjaman dan pengembalian buku, serta pembuatan laporan, dapat diotomatisasi dan dilakukan dengan lebih efisien.</p>
             <p>Sistem ini juga menawarkan manfaat signifikan, seperti kemudahan akses informasi, keamanan data, serta fitur pencarian dan pelaporan yang lebih baik. Teknologi yang digunakan, seperti PHP, MySQL, dan framework CodeIgniter, memungkinkan pengembangan sistem yang handal dan terintegrasi dengan database terstruktur. Selain itu, metode Waterfall yang diterapkan memastikan pengembangan sistem dilakukan secara terorganisir, mulai dari analisis kebutuhan hingga tahap implementasi dan pemeliharaan.</p>
             <br>
             <h3>Saran</h3>
